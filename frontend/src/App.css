@@ -1,0 +1,138 @@
+.App {
+  min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+  z-index: 0;
+  background-image: linear-gradient(rgba(8, 45, 73, 0.82), rgba(8, 45, 73, 0.78));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 24px;
+  color: var(--white);
+  font-weight: 600;
+}
+
+.btn {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 120, 255, 0.3);
+}
+
+.btn-primary {
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 6px 16px rgba(0, 120, 255, 0.4);
+}
+
+.btn-secondary {
+  background: var(--gray);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: var(--dark);
+}
+
+.btn-danger {
+  background: var(--error);
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #dc2626;
+}
+
+.btn-success {
+  background: var(--success);
+  color: white;
+}
+
+.btn-success:hover {
+  background: #059669;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 14px 18px;
+  margin: 10px 0;
+  border: 2px solid var(--light-gray);
+  border-radius: 12px;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.error {
+  color: var(--error);
+  margin: 15px 0;
+  padding: 16px;
+  background: #fee2e2;
+  border-radius: 12px;
+  border-left: 4px solid var(--error);
+  font-weight: 500;
+}
+
+.success {
+  color: var(--success);
+  margin: 15px 0;
+  padding: 16px;
+  background: #d1fae5;
+  border-radius: 12px;
+  border-left: 4px solid var(--success);
+  font-weight: 500;
+}
+
+/* Card styles */
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease;
+}

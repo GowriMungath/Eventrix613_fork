@@ -1,0 +1,34 @@
+:root {
+  /* Blue-forward color scheme */
+  --primary: #0b72c4;
+  --primary-light: #5aa3ff;
+  --primary-dark: #083359;
+  --secondary: #0f4c81;
+  --secondary-light: #1f6da6;
+  --secondary-dark: #082d49;
+  --accent: #4fb3ff;
+  --dark: #0d1b2a;
+  --gray: #52616b;
+  --light-gray: #e6edf5;
+  --white: #ffffff;
+
+  /* Gradients */
+  --primary-gradient: linear-gradient(135deg, var(--primary), var(--primary-light));
+  --secondary-gradient: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+
+  /* Text colors */
+  --text-primary: #0c1c2b;
+  --text-secondary: #304a63;
+  --text-light: #ffffff;
+
+  /* Other colors */
+  --background: #f4f8ff;
+  --surface: #ffffff;
+  --error: #e63946;
+  --success: #34c759;
+  --warning: #ffb020;
+
+  /* Font family */
+  --font-primary: 'Roboto', sans-serif;
+  --font-secondary: 'Montserrat', sans-serif;
+}
