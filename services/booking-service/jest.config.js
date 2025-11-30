@@ -1,15 +1,14 @@
 module.exports = {
-  displayName: 'Auth-Service',
+  displayName: 'Booking-Service',
   testEnvironment: 'node',
-  collectCoverage: true,
-  collectCoverageFrom: [
-    'src/routes/**/*.js', '!src/**/__tests__/**'],
+  roots: ['<rootDir>/src'],
+  testMatch: ['**/__tests__/**/*.test.js'],
+  collectCoverageFrom: ['src/routes/**/*.js', '!src/**/__tests__/**'],
   coveragePathIgnorePatterns: [
     '/node_modules/',
     'src/server.js',
     'src/models/'
-  ],      
-  
+  ],
   coverageDirectory: 'coverage',
   coverageReporters: ['text', 'text-summary', 'lcov'],
   verbose: true,

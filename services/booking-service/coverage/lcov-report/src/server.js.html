@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/22</span>
+                <span class='fraction'>0/20</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/22</span>
+                <span class='fraction'>0/20</span>
             </div>
         
             
@@ -108,14 +108,11 @@
 <a name='L43'></a><a href='#L43'>43</a>
 <a name='L44'></a><a href='#L44'>44</a>
 <a name='L45'></a><a href='#L45'>45</a>
-<a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L46'></a><a href='#L46'>46</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -135,7 +132,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -162,13 +158,12 @@ const mongoose = <span class="cstat-no" title="statement not covered" >require('
 const cors = <span class="cstat-no" title="statement not covered" >require('cors');</span>
 <span class="cstat-no" title="statement not covered" >require('dotenv').config();</span>
 &nbsp;
-const authRoutes = <span class="cstat-no" title="statement not covered" >require('./routes/auth');</span>
-const debugRoutes = <span class="cstat-no" title="statement not covered" >require('./routes/debug');</span>
+const bookingRoutes = <span class="cstat-no" title="statement not covered" >require('./routes/bookings');</span>
 &nbsp;
 const app = <span class="cstat-no" title="statement not covered" >express();</span>
 &nbsp;
-const PORT = <span class="cstat-no" title="statement not covered" >process.env.PORT || 4001;</span>
-const MONGO_URI = <span class="cstat-no" title="statement not covered" >process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/eventsphere-auth';</span>
+const PORT = <span class="cstat-no" title="statement not covered" >process.env.PORT || 4003;</span>
+const MONGO_URI = <span class="cstat-no" title="statement not covered" >process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/eventsphere-bookings';</span>
 &nbsp;
 // Middleware
 <span class="cstat-no" title="statement not covered" >app.use(cors({</span>
@@ -182,12 +177,11 @@ const MONGO_URI = <span class="cstat-no" title="statement not covered" >process.
 <span class="cstat-no" title="statement not covered" >app.use(express.json());</span>
 &nbsp;
 // Routes
-<span class="cstat-no" title="statement not covered" >app.use('/api/auth', authRoutes);</span>
-<span class="cstat-no" title="statement not covered" >app.use('/api/debug', debugRoutes);</span>
+<span class="cstat-no" title="statement not covered" >app.use('/api/bookings', bookingRoutes);</span>
 &nbsp;
 // Health check
 <span class="cstat-no" title="statement not covered" >app.get('/health', <span class="fstat-no" title="function not covered" >(r</span>eq, res) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  res.json({ status: 'Auth service is running', timestamp: new Date() });</span>
+<span class="cstat-no" title="statement not covered" >  res.json({ status: 'Booking service is running', timestamp: new Date() });</span>
 });
 &nbsp;
 // MongoDB connection
@@ -195,7 +189,7 @@ const MONGO_URI = <span class="cstat-no" title="statement not covered" >process.
   .then(<span class="fstat-no" title="function not covered" >()</span> =&gt; {
 <span class="cstat-no" title="statement not covered" >    console.log('✅ Connected to MongoDB');</span>
 <span class="cstat-no" title="statement not covered" >    app.listen(PORT, <span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      console.log(`🚀 Auth service running on port ${PORT}`);</span>
+<span class="cstat-no" title="statement not covered" >      console.log(`🚀 Booking service running on port ${PORT}`);</span>
     });
   })
   .catch(<span class="fstat-no" title="function not covered" >er</span>r =&gt; {
@@ -211,7 +205,7 @@ const MONGO_URI = <span class="cstat-no" title="statement not covered" >process.
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-29T08:08:43.402Z
+                at 2025-11-30T01:46:52.300Z
             </div>
         <script src="../prettify.js"></script>
         <script>
