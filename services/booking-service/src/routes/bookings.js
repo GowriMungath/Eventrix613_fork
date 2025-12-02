@@ -103,7 +103,10 @@ router.post('/', verifyToken, async (req, res) => {
       booking.paymentStatus = 'pending';
       await booking.save();
 
-      await sendWaitlistEmail(booking, event);
+      // Send email asynchronously without blocking the response
+      sendWaitlistEmail(booking, event).catch(err => {
+        console.error('Failed to send waitlist email:', err.message);
+      });
 
       return res.status(202).json({
         message: 'Event is full. You have been added to the waitlist.',
@@ -147,7 +150,11 @@ router.post('/', verifyToken, async (req, res) => {
     }
 
     await booking.save();
-    await sendBookingEmail(booking, event);
+    
+    // Send email asynchronously without blocking the response
+    sendBookingEmail(booking, event).catch(err => {
+      console.error('Failed to send booking email:', err.message);
+    });
 
     res.status(201).json({
       message: 'Booking confirmed successfully',

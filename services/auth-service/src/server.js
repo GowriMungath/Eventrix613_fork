@@ -15,8 +15,7 @@ const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/eventspher
 app.use(cors({
   origin: [
     'http://localhost:3000',
-    'https://wonderful-water-07646600f.3.azurestaticapps.net',
-    'https://wonderful-water-07646600f-preview.eastus2.3.azurestaticapps.net'
+    'https://eventrix-frontend-4q7a.onrender.com'  // Add your Render frontend URL
   ],
   credentials: true
 }));

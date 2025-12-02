@@ -118,7 +118,8 @@ function EventDetail({ user }) {
           joinWaitlist: event.availableSeats < tickets
         },
         {
-          headers: { Authorization: `Bearer ${token}` }
+          headers: { Authorization: `Bearer ${token}` },
+          timeout: 30000 // 30 second timeout
         }
       );
 
@@ -134,7 +135,11 @@ function EventDetail({ user }) {
         }, 2500);
       }
     } catch (err) {
-      toast.error(err.response?.data?.error || 'Booking failed');
+      if (err.code === 'ECONNABORTED' || err.message.includes('timeout')) {
+        toast.error('Request timed out. Please check your bookings page to verify if the booking was successful.');
+      } else {
+        toast.error(err.response?.data?.error || 'Booking failed');
+      }
     } finally {
       setBooking(false);
     }
